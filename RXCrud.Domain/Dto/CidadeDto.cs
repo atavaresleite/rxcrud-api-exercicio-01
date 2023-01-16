@@ -4,16 +4,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RXCrud.Domain.Dto
 {
-    [DisplayName("Estado")]
-    public class EstadoDto
+    [DisplayName("Cidade")]
+    public class CidadeDto
     {
-        public EstadoDto()
+        public CidadeDto()
             => Id = Guid.NewGuid();
 
-        public EstadoDto(string uF, string nome)
+        public CidadeDto(string nome, Guid idEstado)
         {
             Nome = nome;
-            UF = uF;
+            IdEstado = idEstado;
             Id = Guid.NewGuid();
         }
 
@@ -22,7 +22,9 @@ namespace RXCrud.Domain.Dto
         [Required(ErrorMessage = "Campo 'Nome' obrigatório.")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Campo 'UF' obrigatório.")]
-        public string UF { get; set; }
+        [Required(ErrorMessage = "Campo 'IdEstado' obrigatório.")]
+        public Guid IdEstado { get; set; }
+
+        public EstadoDto Estado { get; set; }
     }
 }

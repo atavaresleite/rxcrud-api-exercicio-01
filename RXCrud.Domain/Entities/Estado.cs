@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace RXCrud.Domain.Entities
 {
@@ -19,7 +21,10 @@ namespace RXCrud.Domain.Entities
         }
 
         public string UF { get; set; }
+
         public string Nome { get; set; }
+
+        public ICollection<Cidade> Cidades { get; set; }
 
     }
 }

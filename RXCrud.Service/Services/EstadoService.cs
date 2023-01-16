@@ -13,29 +13,29 @@ namespace RXCrud.Service.Services
     public class EstadoService : IEstadoService
     {
         private readonly IMapper _mapper;
-        private readonly IEstadoRepository _usuarioRepository;
+        private readonly IEstadoRepository _estadoRepository;
 
-        public EstadoService(IMapper mapper, IEstadoRepository usuarioRepository)
+        public EstadoService(IMapper mapper, IEstadoRepository estadoRepository)
         {
             _mapper = mapper;
-            _usuarioRepository = usuarioRepository;
+            _estadoRepository = estadoRepository;
         }
 
-        public void Criar(EstadoDto usuarioDto)
-            => _usuarioRepository.Criar(_mapper.Map<Estado>(usuarioDto));
+        public void Criar(EstadoDto estadoDto)
+            => _estadoRepository.Criar(_mapper.Map<Estado>(estadoDto));
         
 
-        public void Atualizar(EstadoDto usuarioDto)
-            => _usuarioRepository.Atualizar(_mapper.Map<Estado>(usuarioDto));
+        public void Atualizar(EstadoDto estadoDto)
+            => _estadoRepository.Atualizar(_mapper.Map<Estado>(estadoDto));
         
 
-        public void Remover(EstadoDto usuarioDto)
-            => _usuarioRepository.Remover(_mapper.Map<Estado>(usuarioDto));
+        public void Remover(EstadoDto estadoDto)
+            => _estadoRepository.Remover(_mapper.Map<Estado>(estadoDto));
 
         public IQueryable<EstadoDto> ObterTodos()
-            => _usuarioRepository.ObterTodos().ProjectTo<EstadoDto>(_mapper.ConfigurationProvider);
+            => _estadoRepository.ObterTodos().ProjectTo<EstadoDto>(_mapper.ConfigurationProvider);
 
         public EstadoDto PesquisarPorId(Guid id)
-            => _mapper.Map<EstadoDto>(_usuarioRepository.PesquisarPorId(id));
+            => _mapper.Map<EstadoDto>(_estadoRepository.PesquisarPorId(id));
     }
 }
