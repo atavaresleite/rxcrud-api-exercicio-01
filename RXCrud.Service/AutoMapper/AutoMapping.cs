@@ -10,6 +10,8 @@ namespace RXCrud.Service.AutoMapper
         {
             CreateMap<Usuario, UsuarioDto>()
                 .ReverseMap();
+            CreateMap<Estado, EstadoDto>()
+                .ReverseMap();
         }
     }
 }
