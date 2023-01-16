@@ -12,6 +12,8 @@ namespace RXCrud.Service.AutoMapper
                 .ReverseMap();
             CreateMap<Estado, EstadoDto>()
                 .ReverseMap();
+            CreateMap<Cidade, CidadeDto>()
+                .ReverseMap();
         }
     }
 }
